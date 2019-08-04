@@ -1,5 +1,32 @@
-<div class="section" id="section3">
-		<div class="center-align" style="width:1100px;margin-left:8%">
+<!DOCTYPE html>
+<html>
+<style>
+  .center-align {
+    width: 1480px;
+	background-color: #F0F8FF;
+  }
+  #next {
+    float: right;
+	position: right;
+    margin-right:10px;
+	background-color: #F0F8FF;
+	border: none;
+	border-style: dotted;
+	color: black;
+	padding: 8px 8px;
+	display: inline-block;
+	font-size: 16px;
+}
+</style>
+
+<div class="i" id="index">		
+		<input type=button id ="next" class="next" onClick="location.href='https://varunkakkaruiuc.github.io/NarrativeVisualization/Top5PopulatedCountries.html'" value='Click for Narrative Story'>
+		<div class="center-align">
+				<h1>CS 498: Data Visualization</h1>
+				
+				<h2>DataSet</h2>
+				<p>World Development Indicators - http://datatopics.worldbank.org/world-development-indicators/</p>
+				
 				<h2>Messaging</h2>
 				<p>This visualization is an interactive slideshow which talks about the population of top 5 most populated countries of the 
 				world in 2018 (China, India, USA, Indonesia & Pakistan). I have looked at the WDI dataset for this narration. I have presented a population growth trend for these countries 
@@ -19,13 +46,13 @@
 				charts or quantitative & quantitative data with line charts, clear use of labels/text for frames to communicate the details</p>
 				<p>Highlight - Important information that I want to present is highighted using the annotations and axis labels</p>
 				<p>Transition - I have made sure that the user is not disoriented from scene to scene. I have used the same dimension for the svg canvas, the contours used to
-				depict different countries. In case of similar information presented in different scenes (rural & urban growth), I used similar scale for axis to depict the growth in
-				rural population is negative in some cases as compared to urban population growth that is always positive.</p>
+				depict different countries, the font of the text.</p>
 
 				<h2>Scenes</h2>
-				<p>I have developed the scenes as the slides in the presentation and added the following scenes.
+				<p>I have developed the scenes as the slides in the presentation and added the following scenes-
 					<ul>
-						<li>Scene 1- To depict the population for top 5 most populated countries of the world</li>
+						<li>Scene 1- Depict the population for top 5 most populated countries of the world. I have used bar charts to represent the data with tooltip to display 
+						the population data on demand.</li>
 						<li>Scene 2- This scene presents the population growth for last six decades for these  5 countries.</li>
 						<li>Scene 3- Once user get an idea for the overall growth trend, I present the growth trend for rural & urban population and user has the option to filter based on country.</li>
 					</ul>
@@ -36,8 +63,8 @@
 				
 				<h2>Annotations</h2>
 				<p>I have used a text to convey the important message for the scene. The other way of communicating the annotations used are clear labels for the axis and tooltip
-					is used in few scenes to provide the detail on demand information. This will help user to get a high level message from the scene.
-					The annotations change from scene to scene but not within a scene.</p>
+					is used in few scenes to provide the detail on demand information. This will help user to get a high level message from the scene. Annotations like "Neutral Growth" 
+					is added to the graph to convey the message about rural vs urban population growth trend. The annotations change from scene to scene but not within a scene.</p>
 				
 				<h2>Parameters</h2>
 				<p> Parameters allows user to transition from one view to another. In the case of rural and urban population scene, I have provided the parameter
@@ -48,6 +75,16 @@
 				population growth scene to select the data for particular country. I have added it at the bottom of the chart unlike the previous scenes to attract user's 
 				attention. I still used the same colors to make sure user is not disoriented in the transition.</p>
 				<br />
+				
+				<h2>Author</h2>
+				<p>Varun Kakkar</p>
+				<p>vkakkar2@illinois.edu</p>
+				
+				<h2>Narrative Story Link</h2>
+				<ul>
+					<li><a href="https://varunkakkaruiuc.github.io/NarrativeVisualization/Top5PopulatedCountries.html">Click Here</a></li>
+				</ul>
 		</div>
 	</div>
 </div>
+</html>

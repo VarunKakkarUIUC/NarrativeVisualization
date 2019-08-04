@@ -4,17 +4,40 @@
     font-size: 16px;
     text-anchor: left;
 }
+#prev {
+  background-color: #F0F8FF;
+  border: none;
+  border-style: dotted;
+  color: black;
+  padding: 8px 8px;
+  text-decoration: none;
+  font-size: 16px;
+}
+#next {
+    float: right;
+	position: right;
+    margin-right:80px;
+	background-color: #F0F8FF;
+	border: none;
+	border-style: dotted;
+	color: black;
+	padding: 8px 8px;
+	display: inline-block;
+	font-size: 16px;
+}
 </style>
 <html>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <body>
 	<header>
 		<h1>Population Growth trend for past 6 decades</h1>
+		<input type=button id="prev" class="prev" onClick="location.href='https://varunkakkaruiuc.github.io/NarrativeVisualization/Top5PopulatedCountries.html'" value='<- TopPopulatedCountries'>
+		<input type=button id ="next" class="next" onClick="location.href='https://varunkakkaruiuc.github.io/NarrativeVisualization/RuralVsUrbanPopulationGrowth.html'" value='RuralVsUrban ->'>
 	</header>
    <svg width=1400 height=500></svg>
    <script>
 		var crange = ["#FF6F60", "#FF00FF", "#006300", "#CC033C", "#993CF3"];
-		var svg = d3.select("svg")
+		var svg = d3.select("svg").style("background-color", '#F0F8FF');
 		var margin = 100
 		var width = svg.attr("width") - margin
 		var height = svg.attr("height") - margin;
@@ -217,5 +240,8 @@
 		  });		
 		});	
    </script>
+   <footer>
+		
+	</footer>
    </body>
 </html>
