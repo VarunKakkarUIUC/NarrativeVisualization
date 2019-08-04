@@ -177,7 +177,6 @@
 		country.append("text");
 
 		// in order to display tooltip need to add rect element. It was not working with g element.
-		// This will help to highlight the tooltip on a larger area too
 		tooltip.append('svg:rect')
 		  .attr('fill', 'none')
 		  .attr('pointer-events', 'all')
@@ -207,13 +206,6 @@
 
 			d3.selectAll(".countryline")
 			  .attr("transform", function(d, i) {
-				var yearValues = x.invert(pointer[0])
-				var	bisect = d3.bisector(function(d) { 
-								return d.Year; })
-								.right;
-				var	idx = bisect(d.values, yearValues);	
-				console.log("d.values")				
-				console.log(d.values)
 				var start = 0
 				var	end = countries[i].getTotalLength()
 				var	result = null;
