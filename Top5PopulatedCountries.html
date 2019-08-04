@@ -47,6 +47,9 @@
 		var width = svg.attr("width") - margin
 		var height = svg.attr("height") - margin;
 		
+		// Parse the population to number format
+		var parseNumber = d3.format(",");
+		
 		// Adding the range for x,y and color attributes
 		var x = d3.scaleBand().range([0, width])
 		var y = d3.scaleLinear().range([height, 0])
@@ -110,7 +113,7 @@
 				tooltip.style("opacity", 1)
 					   .style("left",(d3.event.pageX)+"px")
 					   .style("top",(d3.event.pageY)+"px")
-					   .html(+d.Population);
+					   .html(parseNumber(d.Population));
 			})
 			.on("mouseout", function() { tooltip.style("opacity", 0) })	
    </script>
