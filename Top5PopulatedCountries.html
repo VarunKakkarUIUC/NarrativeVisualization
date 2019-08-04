@@ -29,6 +29,13 @@
 			
 		var g = svg.append("g")
             .attr("transform", "translate(" + 100 + "," + 10 + ")");
+		
+		// Adding the annotation
+		var annotation = g.append('g');		
+		annotation.append('text')
+		  .attr('x', 1050)
+		  .attr('y', 1)
+		  .text("China is the most populated country"); 
 				
 		var data = [{"Country":"China","Population":1392730000},{"Country":"India","Population":1352617328},{"Country":"Indonesia","Population":267663435},{"Country":"Pakistan","Population":212215030},{"Country":"United States","Population":327167434}]
 		// Adding the domains for the values of x, y & color attribute

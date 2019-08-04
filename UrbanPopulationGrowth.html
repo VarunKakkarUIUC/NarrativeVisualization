@@ -28,6 +28,13 @@
 		var g = svg.append("g")
             .attr("transform", "translate(" + 100 + "," + 50 + ")");
 
+		// Adding the annotation
+		var annotation = g.append('g');		
+		annotation.append('text')
+		  .attr('x', 1050)
+		  .attr('y', 1)
+		  .text("Positive growth is observed."); 
+		  
 		// Define the line chart for each country
 		var linepop = d3.line()
 			.x(function(d) { return x(d.Year); })

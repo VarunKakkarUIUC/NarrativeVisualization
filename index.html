@@ -1,1 +1,56 @@
-"Hello world" 
+<div class="section" id="section3">
+		<div class="center-align" style="width:1100px;margin-left:8%">
+				<h2>Messaging</h2>
+				<p>This visualization is an interactive slideshow which talks about the population of top 5 most populated countries of the 
+				world in 2018 (China, India, USA, Indonesia & Pakistan). I have looked at the WDI dataset. I have presented a population growth trend for these countries 
+				in last 60 years. Once we see the trend for population growth, the next scene depicts the corresponding population growth in
+				rural & urban population for these countries. This will give user an idea that the country like India where the population is increasing
+				for both rural & urban and would surpass China (most populated country in 2018). The population growth trend is always on a rise for 
+				urban areas for all the countries,hinting that because of the available opportunities rural population is moving towards cities.
+				
+				<h2>Narrative Structure</h2>
+				<p>This visualization follows the "Interactive Slide Show" structure. The user is given the visual information about the data based on the scenes depicted in the story.
+				The user has the option to drilldown in the details (mouse over the line charts to view & compare the population of the countries for a particular year, 
+				filter the data for the "urban" & "rural" population growth per country) or move on to the next scene. This visualization tends to focus more on stronger messaging
+				rather than free form exploration.</p>
+				
+				<h2>Visual Structure</h2>
+				<p>Structure - The data is presented to the user in a simple form that present the information clearly whether it is depicting quantitative & nominal data with bar 
+				charts or quantitative & quantitative data with line charts, clear use of labels/text for frames to communicate the details</p>
+				<p>Highlight - Important information that I want to present is highighted using the annotations</p>
+				<p>Transition - I have made sure that the user is not disoriented from scene to scene. I have used the same dimension for the svg canvas, the contours used to
+				depict different countries. In case of similar information presented in different scenes (rural & urban growth), I used similar scale for axis to depict the growth in
+				rural population is negative in some cases as compared to urban population growth that is always positive.</p>
+
+				<h2>Scenes</h2>
+				<p>I have developed the scenes ars the slides in the presentation and added the following scenes.
+					<ul>
+						<li>Scene 1- To depict the population for top 5 most populated countries of the world</li>
+						<li>Scene 2- This scene presents the population growth for last six decades for these  5 countries.</li>
+						<li>Scene 3- Once user get an idea for the overall growth trend, I present the growth trend for rural & urban population.</li>
+					</ul>
+				</p>
+				<p>The scenes are ordered to tell the story about the population growth for few countries & answer the questions that user might have,
+				looking at scene 1, scene 2 & scene 3 respectively. The user will come to conclusion that the country where there is increase in both rural & urban
+				population like India is on the path to be the most populated country.
+				<br />				
+				
+				<h2>Annotations</h2>
+				<p>I have used a text to convey the important message for the scene. The other way of communicating the annotations used are clear labels for the axis and tooltip
+					is used in few scenes to provide the detail on demand information. This will help user to get a high level message from the scene.
+					The annotations change from scene to scene but not within a scene.</p>
+				<br />
+				
+				<h2>Parameters</h2>
+				<p> Parameters allows user to transition from one view to another. In the case of rural and urban population scene, I have provided the parameter
+					with the legends (Country) at the bottom of the chart. Each legend will result in a different state of the scene.</p>
+				<br />
+				
+				<h2>Triggers</h2>
+				<p>Triggers are used to interact with parameters and change the state of the scene. In our visualization story, the trigger is click of the legend (Country) in rural and urban 
+				population growth scene to filter the data for different countries. I have added them at the bottom of the chart unlike the previous scenes to attract user's 
+				attention. I still used the same colors to make sure user is not disoriented in the transition.</p>
+				<br />
+		</div>
+	</div>
+</div>
