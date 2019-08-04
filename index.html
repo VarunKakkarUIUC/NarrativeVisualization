@@ -2,13 +2,13 @@
 <html>
 <style>
   .center-align {
-    width: 1480px;
+    width: 1400px;
 	background-color: #F0F8FF;
   }
   #next {
     float: right;
 	position: right;
-    margin-right:10px;
+    margin-right:70px;
 	background-color: #F0F8FF;
 	border: none;
 	border-style: dotted;
@@ -26,8 +26,7 @@
 				<h1>CS 498: Data Visualization</h1>
 				
 				<h2>Author</h2>
-				<p>Varun Kakkar</p>
-				<p>vkakkar2@illinois.edu</p>
+				<p>Varun Kakkar (vkakkar2@illinois.edu)</p>
 				
 				<h2>DataSet</h2>
 				<p>World Development Indicators - http://datatopics.worldbank.org/world-development-indicators/</p>
@@ -58,12 +57,12 @@
 				previous and next arrow buttons at the top. The previous and next buttons are given title according to the scene they will be redirecting the user. I get user's 
 				attention by highlighting the button clicks with dotted style, this will prompt users to click and navigate the story. We have added annotations in each scene to 
 				highlight the message. This will help deliver the right message to the user. I have used a wide canvas to show tooltip, in case user mouse the charts. 
-				I have used Labeled axis, Tooltip, legends & text as annotations. I have added the following scenes-
+				I have used Labeled axis, Tooltip, Buttons, Legends & text as annotations. I have added the following scenes-
 					<ul>
-						<li>Scene 1- Depict the population for top 5 most populated countries of the world. I have used bar charts for quantitative(population) & nominal(Country) data to 
+						<li>Scene 1- Depict the population for top 5 most populated countries of the world. I have used bar charts for quantitative (population) & nominal(Country) data to 
 						represent the information. I have added the tooltip to display the population data on demand.</li>
-						<li>Scene 2- This scene presents the population growth for last six decades for these 5 countries. I have used line charts for quantitative(population) 
-						& quantitative(Year) data to represent the information. I have used tooltip to display the population data for all the countries on demand.
+						<li>Scene 2- This scene presents the population growth for last six decades for these 5 countries. I have used line charts for quantitative (population) 
+						& quantitative (Year) data to represent the information. I have used tooltip to display the population data for all the countries on demand.
 						The line charts with population data displayed on the tooltip gives the user an easy way to compare the population growth among these countries.</li>
 						<li>Scene 3*- Once user get an idea for the overall growth trend, I present the growth trend for rural & urban population and user has the option to 
 						view select data based on country. This scene leads to other scenes as well based on the selection of the dropdown.</li>
@@ -76,13 +75,14 @@
 					is added to the graph to convey the message about rural vs urban population growth trend. The annotations change from scene to scene but not within a scene.</p>
 				
 				<h2>Parameters</h2>
-				<p> Parameters allows user to transition from one view to another. In the case of rural and urban population scene, I have provided the parameter
-					with the dropdown option (Country) at the bottom of the chart. Each selected option will result in a different state of the scene.</p>
+				<p> Parameters allows user to transition from one view to another. All the scenes have the parameter (button) for previous and next scene, that will help user to navigate the narration.
+					In the case of rural and urban population scene, I have provided the parameter with the dropdown option (Country) at the bottom of the chart. 
+					Each selected option from the dropdown will result in a different state of the scene.</p>
 				
 				<h2>Triggers</h2>
-				<p>Triggers are used to interact with parameters and change the state of the scene. In our visualization story, the trigger is selection in dropdown (Country) in rural and urban 
-				population growth scene to select the data for particular country. I have added it at the bottom of the chart unlike the previous scenes to attract user's 
-				attention. I still used the same colors for the country names to make sure user is not disoriented in the transition.</p>				
+				<p>Triggers are used to interact with parameters and change the state of the scene. In our visualization story, button click provided at all the scenes trigger the state change.
+				The other trigger is selection in dropdown (Country) in rural and urban population growth scene to select the data for particular country. 
+				I have added these at the top & bottom of the charts to attract user's attention. I used the same classes for the style and also same colors for the country names to make sure user is not disoriented in the transition.</p>				
 		</div>
 		<input type=button id ="next" class="next" onClick="location.href='https://varunkakkaruiuc.github.io/NarrativeVisualization/Top5PopulatedCountries.html'" value='Click for Narrative Story'>
 	</div>
