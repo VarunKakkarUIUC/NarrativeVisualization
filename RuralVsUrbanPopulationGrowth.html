@@ -16,6 +16,7 @@
   padding: 8px 8px;
   text-decoration: none;
   font-size: 16px;
+  font-weight: bold;
 }
 #next {
     float: right;
@@ -28,6 +29,7 @@
 	padding: 8px 8px;
 	display: inline-block;
 	font-size: 16px;
+	font-weight: bold;
 }
 </style>
 <html>
@@ -36,6 +38,7 @@
 	<header>
 		<h1>Rural vs Urban Population growth trend for past 6 decades</h1>
 		<input type=button id="prev" class="prev" onClick="location.href='https://varunkakkaruiuc.github.io/NarrativeVisualization/PopulationGrowthTrend.html'" value='<- PopulationGrowthTrend'>
+		<input type=button id="next" class="next" onClick="location.href='https://varunkakkaruiuc.github.io/NarrativeVisualization/index.html'" value='Overview ->'>
 	</header>
    <svg width=1400 height=500></svg>
    <div id="countryDropdown"></div>
@@ -61,7 +64,7 @@
 		annotation.append('text')
 		  .attr('x', 980)
 		  .attr('y', 1)
-		  .text("Negative growth is observed for rural population."); 
+		  .text("Urban population growth is always increasing."); 
 		  
 		var zeroAnnotation = g.append('g');		
 		zeroAnnotation.append('text')
@@ -195,10 +198,10 @@
 				return colordd(i);
 			})
 		
-		// Function to create the initial graph
+		// Function to create the initial rural vs urban comparison
 		var pageload = function(country){
 
-			// Filter the data to include only country of interest
+			// Filter the data to include selected country
 			var selectCountry = dataGroup.filter(function(d){
 					return d.key == country;
 				  })
@@ -232,7 +235,7 @@
 		// Update the data based on selection
 		var updatePage = function(country){
 
-			// Filter the data to include only country of interest
+			// Filter the data to include only selected country
 			var selectCountry = dataGroup.filter(function(d){
 					return d.key == country;
 				  })

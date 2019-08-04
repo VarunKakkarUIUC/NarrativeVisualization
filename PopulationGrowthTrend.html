@@ -12,6 +12,7 @@
   padding: 8px 8px;
   text-decoration: none;
   font-size: 16px;
+  font-weight: bold;
 }
 #next {
     float: right;
@@ -24,6 +25,7 @@
 	padding: 8px 8px;
 	display: inline-block;
 	font-size: 16px;
+	font-weight: bold;
 }
 </style>
 <html>
@@ -32,7 +34,7 @@
 	<header>
 		<h1>Population Growth trend for past 6 decades</h1>
 		<input type=button id="prev" class="prev" onClick="location.href='https://varunkakkaruiuc.github.io/NarrativeVisualization/Top5PopulatedCountries.html'" value='<- TopPopulatedCountries'>
-		<input type=button id ="next" class="next" onClick="location.href='https://varunkakkaruiuc.github.io/NarrativeVisualization/RuralVsUrbanPopulationGrowth.html'" value='RuralVsUrban ->'>
+		<input type=button id="next" class="next" onClick="location.href='https://varunkakkaruiuc.github.io/NarrativeVisualization/RuralVsUrbanPopulationGrowth.html'" value='RuralVsUrban ->'>
 	</header>
    <svg width=1400 height=500></svg>
    <script>
@@ -41,6 +43,9 @@
 		var margin = 100
 		var width = svg.attr("width") - margin
 		var height = svg.attr("height") - margin;
+		
+		// Parse the population to number format
+		var parseNumber = d3.format(",");
 			
 		// Adding the range for x,y and color attributes
 		var x = d3.scaleLinear().range([0, width])
@@ -75,7 +80,6 @@
 				return d.Country;
 			})
 			.entries(data);		
-		var labelPos = width/dataGroup.length;
 		
 		// Drawing the line data for all the 5 countries
 		dataGroup.forEach(function(d, i) {	
@@ -175,7 +179,7 @@
 		  .attr("height", 1)
 		  .style("opacity", "0");
 		
-		// displaying the text
+		// displaying the population
 		country.append("text");
 
 		// in order to display tooltip need to add rect element. It was not working with g element.
@@ -198,6 +202,7 @@
 			  .style("opacity", "0");
 		  })		  
 		  .on('mousemove', function() {
+			// d3 mouse will give the coordinates
 			var pointer = d3.mouse(this);
 			d3.select(".tooltip-display")
 			  .attr("d", function() {
@@ -208,14 +213,16 @@
 
 			d3.selectAll(".countryline")
 			  .attr("transform", function(d, i) {
-				var yearValues = x.invert(pointer[0]),
-					bisect = d3.bisector(function(d) { 
-								return d.Year; }).right;
-					idx = bisect(d.values, yearValues);
-				
-				var start = 0,
-					end = countries[i].getTotalLength(),
-					result = null;
+				var yearValues = x.invert(pointer[0])
+				var	bisect = d3.bisector(function(d) { 
+								return d.Year; })
+								.right;
+				var	idx = bisect(d.values, yearValues);	
+				console.log("d.values")				
+				console.log(d.values)
+				var start = 0
+				var	end = countries[i].getTotalLength()
+				var	result = null;
 
 				while (true){
 				  result = Math.floor((start + end) / 2);
@@ -232,8 +239,9 @@
 				  else break; 
 				}
 				
+				// display absolute population values
 				d3.select(this).select('text')
-				  .text(y.invert(pos.y).toFixed(2));
+				  .text(parseNumber(y.invert(pos.y).toFixed(0)));
 				  
 				return "translate(" + pointer[0] + "," + pos.y +")";
 			  });

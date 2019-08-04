@@ -16,6 +16,7 @@
 	padding: 8px 8px;
 	display: inline-block;
 	font-size: 16px;
+	font-weight: bold;
 }
 </style>
 
@@ -28,7 +29,7 @@
 				<p>World Development Indicators - http://datatopics.worldbank.org/world-development-indicators/</p>
 				
 				<h2>Messaging</h2>
-				<p>This visualization is an interactive slideshow which talks about the population of top 5 most populated countries of the 
+				<p>This visualization is an Interactive Slide Show, which talks about the population of top 5 most populated countries of the 
 				world in 2018 (China, India, USA, Indonesia & Pakistan). I have looked at the WDI dataset for this narration. I have presented a population growth trend for these countries 
 				in last 60 years. Once we see the trend for population growth, the next scene depicts the corresponding population growth in
 				rural & urban population for these countries. This will give user an idea that the country like India where the population is increasing
@@ -45,21 +46,25 @@
 				<p>Structure - The data is presented to the user in a simple form that present the information clearly whether it is depicting quantitative & nominal data with bar 
 				charts or quantitative & quantitative data with line charts, clear use of labels/text for frames to communicate the details</p>
 				<p>Highlight - Important information that I want to present is highighted using the annotations and axis labels</p>
-				<p>Transition - I have made sure that the user is not disoriented from scene to scene. I have used the same dimension for the svg canvas, the contours used to
-				depict different countries, the font of the text.</p>
+				<p>Transition - I have made sure that the user is not disoriented from scene to scene. I have used the same dimension for the svg canvas, the colors used to
+				depict different countries is same across all the scenes, used uniform font of the text.</p>
 
 				<h2>Scenes</h2>
-				<p>I have developed the scenes as the slides in the presentation and added the following scenes-
+				<p>I have developed the scenes as the slides in the presentation. As I am following the "Interactive Slide Show", user is guided from scene to scene using the 
+				previous and next arrow buttons at the top. The previous and next buttons are given title according to the scene they will be redirecting the user. I get user's 
+				attention by highlighting the button clicks with dotted style, this will prompt users to click and navigate the story. We have added annotations in each scene to 
+				highlight the message. This will help deliver the right message to the user. I have used a wide canvas to show tooltip, in case user mouse the charts. 
+				I have used Labeled axis, Tooltip, legends & text as annotations. I have added the following scenes-
 					<ul>
-						<li>Scene 1- Depict the population for top 5 most populated countries of the world. I have used bar charts to represent the data with tooltip to display 
-						the population data on demand.</li>
-						<li>Scene 2- This scene presents the population growth for last six decades for these  5 countries.</li>
-						<li>Scene 3- Once user get an idea for the overall growth trend, I present the growth trend for rural & urban population and user has the option to filter based on country.</li>
+						<li>Scene 1- Depict the population for top 5 most populated countries of the world. I have used bar charts for quantitative(population) & nominal(Country) data to 
+						represent the information. I have added the tooltip to display the population data on demand.</li>
+						<li>Scene 2- This scene presents the population growth for last six decades for these 5 countries. I have used line charts for quantitative(population) 
+						& quantitative(Year) data to represent the information. I have used tooltip to display the population data for all the countries on demand.
+						The line charts with population data displayed on the tooltip gives the user an easy way to compare the population growth among these countries.</li>
+						<li>Scene 3*- Once user get an idea for the overall growth trend, I present the growth trend for rural & urban population and user has the option to 
+						view select data based on country. This scene leads to other scenes as well based on the selection of the dropdown.</li>
 					</ul>
 				</p>
-				<p>The scenes are ordered to tell the story about the population growth for few top most populated countries & answer the questions that user might have,
-				looking at scene 1, scene 2 & scene 3 respectively. The user will come to conclusion that the country where there is increase in both rural & urban
-				population like India is on the path to be the most populated country.
 				
 				<h2>Annotations</h2>
 				<p>I have used a text to convey the important message for the scene. The other way of communicating the annotations used are clear labels for the axis and tooltip
@@ -73,18 +78,14 @@
 				<h2>Triggers</h2>
 				<p>Triggers are used to interact with parameters and change the state of the scene. In our visualization story, the trigger is selection in dropdown (Country) in rural and urban 
 				population growth scene to select the data for particular country. I have added it at the bottom of the chart unlike the previous scenes to attract user's 
-				attention. I still used the same colors to make sure user is not disoriented in the transition.</p>
+				attention. I still used the same colors for the country names to make sure user is not disoriented in the transition.</p>
 				<br />
 				
 				<h2>Author</h2>
 				<p>Varun Kakkar</p>
-				<p>vkakkar2@illinois.edu</p>
-				
-				<h2>Narrative Story Link</h2>
-				<ul>
-					<li><a href="https://varunkakkaruiuc.github.io/NarrativeVisualization/Top5PopulatedCountries.html">Click Here</a></li>
-				</ul>
+				<p>vkakkar2@illinois.edu</p>				
 		</div>
+		<input type=button id ="next" class="next" onClick="location.href='https://varunkakkaruiuc.github.io/NarrativeVisualization/Top5PopulatedCountries.html'" value='Click for Narrative Story'>
 	</div>
 </div>
 </html>
