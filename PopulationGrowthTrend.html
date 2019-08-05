@@ -176,7 +176,8 @@
 		// displaying the population
 		country.append("text");
 
-		// in order to display tooltip need to add rect element. It was not working with g element.
+		// In order to display tooltip need to add rect element. It was not working with g element.
+		// Reference - https://stackoverflow.com/questions/34886070/multiseries-line-chart-with-mouseover-tooltip
 		tooltip.append('svg:rect')
 		  .attr('fill', 'none')
 		  .attr('pointer-events', 'all')
