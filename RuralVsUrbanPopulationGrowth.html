@@ -200,49 +200,42 @@
 		
 		// Function to create the initial rural vs urban comparison
 		var pageload = function(country){
-
 			// Filter the data to include selected country
 			var selectCountry = dataGroup.filter(function(d){
 					return d.key == country;
 				  })
-
 			var selectCountries = g.selectAll(".countries")
 				.data(selectCountry, function(d){
 				  return d ? d.key : this.key;
 				})
 				.enter()
 				.append("g")
-				.attr("class", "countries")
-				
+				.attr("class", "countries")				
 			var initialPath = selectCountries.selectAll(".line")
 				.data(function(d) { return d.values; })
 				.enter()
 				.append("path")
 				.attr('stroke', function(d,i) { return cs(i); })
-
 			initialPath
 				.attr("d", function(d){
 					return linepop(d.values)
 				})
 				.attr("class", "line")
-
 		}
 
 		// Create initial graph
 		pageload("China")
 		
 		// Update the data based on selection
+		// Reference https://stackoverflow.com/questions/48036954/adding-circles-to-multi-line-graph-with-dropdown-on-d3-js
 		var updatePage = function(country){
-
 			// Filter the data to include only selected country
 			var selectCountry = dataGroup.filter(function(d){
 					return d.key == country;
 				  })
-
 			// Select all of the grouped elements and update the data
 			var selectCountries = g.selectAll(".countries")
 				.data(selectCountry)
-
 				// Select all the lines and transition to new positions
 				selectCountries.selectAll("path.line")
 				   .data(function(d){
@@ -255,14 +248,12 @@
 					  })
 		}
 
-
 		// Run update function when dropdown selection changes
 		countryMenu.on('change', function(){
 			// Find which country was selected from the dropdown
 			var selectedCountry = d3.select(this)
 				.select("select")
 				.property("value")
-
 			// Run update function with the selected country
 			updatePage(selectedCountry)
 		});
